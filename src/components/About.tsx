@@ -39,14 +39,14 @@ const About = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div 
+            <div 
                 key={index}
-                className="text-center hover:scale-105 transition-transform duration-300"
+                className="group text-center p-6 rounded-2xl bg-brown-dark/40 backdrop-blur-xl border border-white/5 hover:border-orange/30 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange/10"
               >
-                <div className="w-20 h-20 bg-orange rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-orange/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-orange/20 group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-orange transition-colors duration-300">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
             );

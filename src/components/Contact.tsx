@@ -33,12 +33,12 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-brown-dark rounded-2xl p-8">
+          <div className="bg-brown-dark/40 backdrop-blur-xl rounded-2xl p-8 border border-white/5 hover:border-orange/20 transition-all duration-300">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-secondary/50 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 border border-white/5">
                   <Mail className="w-6 h-6 text-orange" />
                 </div>
                 <div>
@@ -48,7 +48,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-secondary/50 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 border border-white/5">
                   <Phone className="w-6 h-6 text-orange" />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-secondary/50 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 border border-white/5">
                   <MapPin className="w-6 h-6 text-orange" />
                 </div>
                 <div>
@@ -68,7 +68,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-secondary/50 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 border border-white/5">
                   <Clock className="w-6 h-6 text-orange" />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-brown-dark rounded-2xl p-8">
+          <div className="bg-brown-dark/40 backdrop-blur-xl rounded-2xl p-8 border border-white/5 hover:border-orange/20 transition-all duration-300">
             <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
