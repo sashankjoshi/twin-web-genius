@@ -7,41 +7,43 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative px-4" style={{ perspective: '600px' }}>
+    <section className="min-h-screen flex flex-col items-center justify-center relative px-4 pt-20" style={{ perspective: '1000px', perspectiveOrigin: 'center top' }}>
       {/* 3D Perspective Grid - Only in Hero */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ top: '80px' }}>
         {/* Grid Plane */}
         <div 
-          className="absolute w-[200%] h-[200%]"
+          className="absolute left-1/2 w-[300%] h-[200%]"
           style={{
-            transform: 'rotateX(-65deg) translateZ(-300px)',
+            transform: 'translateX(-50%) rotateX(60deg)',
+            transformOrigin: 'center top',
             transformStyle: 'preserve-3d',
+            top: '0',
             backgroundImage: `
               repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 60px,
-                rgba(255, 100, 50, 0.3) 60px,
-                rgba(255, 100, 50, 0.3) 64px
+                rgba(255, 100, 50, 0.4) 60px,
+                rgba(255, 100, 50, 0.4) 64px
               ),
               repeating-linear-gradient(
                 90deg,
                 transparent,
                 transparent 60px,
-                rgba(255, 100, 50, 0.3) 60px,
-                rgba(255, 100, 50, 0.3) 64px
+                rgba(255, 100, 50, 0.4) 60px,
+                rgba(255, 100, 50, 0.4) 64px
               )
             `,
-            maskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, black 0%, transparent 100%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, black 0%, transparent 100%)'
+            maskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)'
           }}
         />
         
-        {/* Center Orange Glow */}
+        {/* Center Orange Glow from top */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-x-0 top-0 h-[60%]"
           style={{
-            background: 'radial-gradient(ellipse 40% 30% at 50% 60%, rgba(255, 100, 50, 0.15) 0%, transparent 60%)'
+            background: 'radial-gradient(ellipse 50% 40% at 50% 0%, rgba(255, 100, 50, 0.2) 0%, transparent 70%)'
           }}
         />
       </div>
@@ -50,7 +52,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, rgba(10, 10, 10, 0.8) 100%)'
+          background: 'radial-gradient(ellipse 80% 60% at 50% 30%, transparent 0%, rgba(10, 10, 10, 0.7) 100%)'
         }}
       />
 

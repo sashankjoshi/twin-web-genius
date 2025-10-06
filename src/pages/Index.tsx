@@ -16,7 +16,7 @@ const Index = () => {
     >
 
       <Header />
-      <main className="pt-16 relative z-10">
+      <main className="relative z-10">
         <Hero />
         <Events />
         <About />
