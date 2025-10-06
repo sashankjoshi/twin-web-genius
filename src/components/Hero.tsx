@@ -14,7 +14,7 @@ const Hero = () => {
         <div 
           className="absolute left-1/2 w-[400%] h-[300%] -translate-x-1/2"
           style={{
-            transform: 'translateX(-50%) rotateX(75deg)',
+            transform: 'translateX(-50%) rotateX(-65deg) translateZ(-300px)',
             transformOrigin: 'center top',
             transformStyle: 'preserve-3d',
             top: '60px',
