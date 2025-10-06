@@ -7,52 +7,60 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative px-4 pt-20" style={{ perspective: '1000px', perspectiveOrigin: 'center top' }}>
+    <section className="min-h-screen flex flex-col items-center justify-center relative px-4 pt-20" style={{ perspective: '800px', perspectiveOrigin: 'center top' }}>
       {/* 3D Perspective Grid - Only in Hero */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ top: '80px' }}>
-        {/* Grid Plane */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Grid Plane with infinite vanishing point */}
         <div 
-          className="absolute left-1/2 w-[300%] h-[200%]"
+          className="absolute left-1/2 w-[400%] h-[300%] -translate-x-1/2"
           style={{
-            transform: 'translateX(-50%) rotateX(60deg)',
+            transform: 'translateX(-50%) rotateX(75deg)',
             transformOrigin: 'center top',
             transformStyle: 'preserve-3d',
-            top: '0',
+            top: '60px',
             backgroundImage: `
               repeating-linear-gradient(
                 0deg,
                 transparent,
-                transparent 60px,
-                rgba(255, 100, 50, 0.4) 60px,
-                rgba(255, 100, 50, 0.4) 64px
+                transparent 50px,
+                rgba(255, 100, 50, 0.5) 50px,
+                rgba(255, 100, 50, 0.5) 52px
               ),
               repeating-linear-gradient(
                 90deg,
                 transparent,
-                transparent 60px,
-                rgba(255, 100, 50, 0.4) 60px,
-                rgba(255, 100, 50, 0.4) 64px
+                transparent 50px,
+                rgba(255, 100, 50, 0.5) 50px,
+                rgba(255, 100, 50, 0.5) 52px
               )
             `,
-            maskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)'
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 30%, transparent 70%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 30%, transparent 70%)'
           }}
         />
         
-        {/* Center Orange Glow from top */}
+        {/* Intense Center Orange Glow at vanishing point */}
         <div 
-          className="absolute inset-x-0 top-0 h-[60%]"
+          className="absolute inset-x-0 top-0 h-[50%]"
           style={{
-            background: 'radial-gradient(ellipse 50% 40% at 50% 0%, rgba(255, 100, 50, 0.2) 0%, transparent 70%)'
+            background: 'radial-gradient(ellipse 40% 25% at 50% 8%, rgba(255, 100, 50, 0.35) 0%, rgba(255, 100, 50, 0.15) 30%, transparent 70%)'
+          }}
+        />
+        
+        {/* Secondary glow for depth */}
+        <div 
+          className="absolute inset-x-0 top-0 h-[40%]"
+          style={{
+            background: 'radial-gradient(ellipse 30% 20% at 50% 10%, rgba(255, 80, 30, 0.25) 0%, transparent 60%)'
           }}
         />
       </div>
       
-      {/* Vignette Overlay */}
+      {/* Vignette Overlay - darker edges */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 30%, transparent 0%, rgba(10, 10, 10, 0.7) 100%)'
+          background: 'radial-gradient(ellipse 70% 50% at 50% 20%, transparent 0%, rgba(10, 10, 10, 0.85) 100%)'
         }}
       />
 
