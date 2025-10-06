@@ -12,12 +12,14 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Grid Plane with infinite vanishing point */}
         <div 
-          className="absolute left-1/2 w-[400%] h-[300%] -translate-x-1/2"
+          className="absolute w-[400%] h-[300%]"
           style={{
-            transform: 'translateX(-50%) rotateX(-65deg) translateZ(-300px)',
+            left: '50%',
+            marginLeft: '-200%',
+            transform: 'rotateX(-65deg) translateZ(-300px)',
             transformOrigin: 'center top',
             transformStyle: 'preserve-3d',
-            top: '60px',
+            top: '0',
             backgroundImage: `
               repeating-linear-gradient(
                 0deg,
