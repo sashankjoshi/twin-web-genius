@@ -11,54 +11,55 @@ const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden" 
       style={{
-        background: 'linear-gradient(180deg, hsl(230 35% 7%) 0%, hsl(270 40% 12%) 50%, hsl(230 35% 7%) 100%)'
+        background: '#0a0a0a',
+        perspective: '600px'
       }}
     >
-      {/* Diagonal Grid Pattern */}
-      <div className="fixed inset-0 pointer-events-none opacity-30" 
-        style={{
-          backgroundImage: `
-            repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 80px,
-              hsl(var(--muted) / 0.15) 80px,
-              hsl(var(--muted) / 0.15) 81px
-            ),
-            repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 80px,
-              hsl(var(--muted) / 0.15) 80px,
-              hsl(var(--muted) / 0.15) 81px
-            )
-          `
-        }}
-      />
-      
-      {/* Floating Gradients */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-[600px] h-[600px] rounded-full blur-[150px] animate-pulse" 
-          style={{ 
-            background: 'radial-gradient(circle, hsl(270 60% 20% / 0.4) 0%, transparent 70%)',
-            animationDuration: '8s' 
+      {/* 3D Perspective Grid */}
+      <div className="fixed inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
+        {/* Grid Plane */}
+        <div 
+          className="absolute w-[200%] h-[200%]"
+          style={{
+            transform: 'rotateX(-65deg) translateZ(-300px)',
+            transformStyle: 'preserve-3d',
+            backgroundImage: `
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 60px,
+                rgba(255, 100, 50, 0.3) 60px,
+                rgba(255, 100, 50, 0.3) 64px
+              ),
+              repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 60px,
+                rgba(255, 100, 50, 0.3) 60px,
+                rgba(255, 100, 50, 0.3) 64px
+              )
+            `,
+            maskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, black 0%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, black 0%, transparent 100%)'
           }}
         />
-        <div className="absolute top-1/3 right-20 w-[500px] h-[500px] rounded-full blur-[150px] animate-pulse" 
-          style={{ 
-            background: 'radial-gradient(circle, hsl(280 50% 15% / 0.5) 0%, transparent 70%)',
-            animationDuration: '10s', 
-            animationDelay: '2s' 
-          }}
-        />
-        <div className="absolute bottom-1/4 left-1/3 w-[550px] h-[550px] rounded-full blur-[150px] animate-pulse" 
-          style={{ 
-            background: 'radial-gradient(circle, hsl(260 55% 18% / 0.45) 0%, transparent 70%)',
-            animationDuration: '12s', 
-            animationDelay: '4s' 
+        
+        {/* Center Orange Glow */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse 40% 30% at 50% 60%, rgba(255, 100, 50, 0.15) 0%, transparent 60%)'
           }}
         />
       </div>
+      
+      {/* Vignette Overlay */}
+      <div 
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, rgba(10, 10, 10, 0.8) 100%)'
+        }}
+      />
 
       <Header />
       <main className="pt-16 relative z-10">
